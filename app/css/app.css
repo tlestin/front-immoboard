@@ -457,6 +457,28 @@ div .intro_titre {
   text-align: left;
 }
 
+ul.footer_social {
+  margin-top: 2em;
+    padding: 0px;
+    list-style: outside none none;
+}
+.footer_social li {
+  display: inline-block;
+}
+
+i.fb {
+    width: 170px;
+    height: 150px;
+    display: block;
+    background: #3B5997 url("../img/fb.png") no-repeat scroll 50px 30px;
+}
+i.tw {
+    width: 170px;
+    height: 150px;
+    display: block;
+    background: #3FCCFD url("../img/tw.png") no-repeat scroll 50px 30px;
+}
+
 .btn-twitter {background-color:#4099FF;color:#fff;}
 .btn-facebook {background-color:#3B5998;color:#fff;}
 .btn-google-plus {background-color:#d34836;color:#fff;}
