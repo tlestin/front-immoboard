@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+<meta charset="utf-8" />
+<title ng-bind="$root.title +' - Immoboard'">Immoboard</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/app.css">
+
+<!-- JavaScript -->
+  <script type="text/javascript">
+  var basePath = 'http://127.0.0.1/Front-ImmoBoard/';
+  </script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/angular/angular.min.js"></script>
+<script src="js/angular/angular-route.min.js"></script>
+<script src="js/angular/angular-cookies.min.js"></script>
+<script src="js/angular/angular-animate.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/routes.js"></script>
+<script src="js/controllers/index_controller.js"></script>
+<script src="js/controllers/login_controller.js"></script>
+<script src="js/controllers/signup_controller.js"></script>
+<script src="js/controllers/lostpassword_controller.js"></script>
+<script src="js/controllers/dashboard_controller.js"></script>
+</head>
+<body>
+  <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#/" class="navbar-brand">Immoboard</a>
+            </div>
+            <nav class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-right navbar-nav">
+                  <li>
+                      <a id="menu-login" href="#/login"><span class="glyphicon glyphicon-user"></span> Connexion</a>
+                  </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div ng-controller="AuthCookieCtrl"></div>
+  <div class="" ng-view style='border-radius: 4px'>
+  </div>
+</body>
+</html>
