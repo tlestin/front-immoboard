@@ -1,20 +1,19 @@
-<div id="" class="login-back">
-
-<div ng-controller="LostpwdCtrl" class="container">
-  <button ng-click="toggleModal()" class="btn btn-default">Open modal</button>
-
-  <modal title="Login form" visible="showModal">
-    <form role="form">
-      <div class="form-group">
-        <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email" />
+<div id="intro" class="login-back">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center">Réinitialisation du mot de passe</h2>
+      <div class="col-md-4 col-md-offset-4">
+          <form role="form" ng-controller="LostpwdCtrl">
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" placeholder="Enter votre adresse email" />
+            </div>
+            <input type="submit" class="btn btn-primary btn-lg btn-block" data-ng-click="sendPwd()" value="rechercher">
+          </form>
+          <span class="pull-right"><a href="#/login">Se connecter</a></span>
       </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password" />
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-  </modal>
-</div>
+      <div class="col-md-4 col-md-offset-4">
+      <div id="rect"></div>
+    </div>
+    </div>
+  </div>
 </div>

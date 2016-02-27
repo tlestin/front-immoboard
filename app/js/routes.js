@@ -19,7 +19,7 @@ App.config(function($routeProvider) {
     })
   $routeProvider
     .when('/password', {
-      title: 'Demande de mot de passe',
+      title: 'Réinitialisation du mot de passe',
       templateUrl: 'views/lostpwd.html',
       controller:  'LostpwdCtrl'
     })
@@ -28,5 +28,11 @@ App.config(function($routeProvider) {
       title: 'Tableau de board',
       templateUrl: 'views/dashboard.html',
       controller:  'dashboardCtrl'
+    })
+  $routeProvider
+    .when('/account', {
+      title: 'Mon compte',
+      templateUrl: 'views/settings.html',
+      controller:  'settingsCtrl'
     })
 });

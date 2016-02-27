@@ -478,6 +478,25 @@ i.tw {
     display: block;
     background: #3FCCFD url("../img/tw.png") no-repeat scroll 50px 30px;
 }
+.table-hover th, td { text-align: center;}
+.menu{
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+i.glyphicon-remove-sign {
+  color: #DB2724;
+}
+i.glyphicon-ok-sign {
+  color: #3CAE3E;
+}
+i.glyphicon-hourglass{
+  color: #FF9900;
+}
+i.glyphicon-check
+{
+  color: #006600;
+}
 
 .btn-twitter {background-color:#4099FF;color:#fff;}
 .btn-facebook {background-color:#3B5998;color:#fff;}

@@ -1,3 +1,6 @@
 App.controller('dashboardCtrl', function ($scope, $http, $window, $location, $route, AuthService){
-$('#intro-bck').addClass('hide-bck');
+  $scope.showModal = false;
+  $scope.toggleModal = function(){
+      $scope.showModal = !$scope.showModal;
+  };
 });

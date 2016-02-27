@@ -9,14 +9,8 @@ App.controller('signupCtrl', function ($scope, $http, $window, $location, AuthSe
         $location.path('/dashboard');
       })
       .error(function(data){
-        appendResult('Impossible de créer un compte avec ses informations.', 'error', 'remove');
+        appendResult('Impossible de créer un compte avec ses informations.', 'danger', 'remove');
       })
   }
 
 });
-
-function appendResult(userText , className, iconClass){
-  var resultHTML = "<div class='stretchLeft result "+ className + "'><span class='glyphicon glyphicon-" + iconClass + "'></span> " + userText + "" + "</div>";
-  $('#rect').append(resultHTML);
-  $('.result').delay(10000).fadeOut('1000');
-}

@@ -73,3 +73,11 @@ App.directive('modal', function () {
       }
     };
   });
+
+  
+
+  function appendResult(userText , className, iconClass){
+    var resultHTML = '<div class="alert alert-'+className+' alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+userText+'</div>';
+    $('#rect').html(resultHTML);
+    $('.alert').delay(10000).fadeOut('1000');
+  }

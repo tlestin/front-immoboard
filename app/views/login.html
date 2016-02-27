@@ -19,7 +19,7 @@
 
 
                   </form>
-                  <span><button ng-click="toggleModal()" class="btn btn-link">Mot de passe oublié ?</button></span>
+                  <span><a href="#/password" class="btn btn-link">Mot de passe oublié ?</a></span>
                   <span class="pull-right"><a href="#/signup">S'inscrire</a></span>
                   <div id="rect"></div>
                 </div>
@@ -30,19 +30,5 @@
       </div>
 
     </div>
-
-
-    <modal title="Réinitialiser le mot de passe" visible="showModal">
-      <form name="user" method="post" role="form-inline">
-        <div class="input-group">
-          <span class="input-group-addon" id="sizing-addon2">@</span>
-          <input type="text" class="form-control" autocomplete="off" placeholder="Votre adresse email" aria-describedby="sizing-addon2">
-          <span class="input-group-btn">
-            <button class="btn btn-primary" type="button" ng-click="sendPwd()">Envoyer</button>
-          </span>
-        </div>
-      </form>
-      <div id="rect2"></div>
-    </modal>
   </div>
 </div>
