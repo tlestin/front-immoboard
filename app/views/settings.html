@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+  <h2 class="title text-uppercase text-center">Mon compte</h2>
+    <div class="col-xs-12 col-md-2">
+      <ul class="list-group">
+        <li class="list-group-item text-center"><a href="#/" style="text-transform: full-width;"><span class="glyphicon glyphicon-home" style="font-size:30px"></span> Home</a></li>
+        <li class="list-group-item text-center"><a href="#/dashboard" style="text-transform: full-width;"><span class="glyphicon glyphicon-th-list" style="font-size:30px"></span> Dashboard </a></li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-md-10 content">
+      <form class="col-md-12" ng-controller="settingsCtrl">
+        <div class="form-group">
+            <input class="form-control input-lg" placeholder="Nom d’utilisateur" autocomplete="off" size="20" id="user_login" name="login" type="text" ng-model="login">
+        </div>
+        <div class="form-group">
+            <input class="form-control input-lg" placeholder="Email" autocomplete="off" size="20" id="user_email" name="email" type="text" ng-model="email">
+        </div>
+          <div class="form-group">
+              <input class="form-control input-lg" placeholder="Dernier Mot de passe" autocomplete="off" size="20" id="user_lastpass" name="lastpassword" type="password" ng-model="lastpassword">
+          </div>
+          <div class="form-group">
+              <input class="form-control input-lg" placeholder="Nouveau mot de passe" autocomplete="off" size="20" id="user_pass" name="password" type="password" ng-model="password">
+          </div>
+          <div class="form-group">
+              <input class="form-control input-lg" placeholder="Confirmer nouveau mot de passe" autocomplete="off" size="20" id="user_confirm-pass" name="confirm-password" type="password" ng-model="password_confirm">
+          </div>
+          <div class="form-group text-center">
+              <input class="btn btn-success btn-lg btn-block" type="submit" value="Modifier"  data-ng-click="setUser()">
+          </div>
+      </form>
+    </div>
+    <div class="col-xs-12 col-md-10 col-md-offset-2">
+    <div id="rect"></div>
+    </div>
+  </div>
+</div>
