@@ -3,10 +3,11 @@
     <div class="row " style=''>
         <div class="col-md-4 col-md-offset-4">
             <h2 class="title">Inscription</h2>
+            <p class="condition">Inscrivez-vous gratuitement sur immoboard.fr</p>
             <div class="social-logins">
     					<span class="line"></span>
     					<span class="or">or</span>
-    					<button class="btn" ng-click="signUpWithOAuth('github')">
+    					<button class="btn" ng-click="signUpWithFb('fb')">
     						<span><i class="icon-github"></i> S'incrire avec Facebook</span>
     					</button>
     				</div>
@@ -17,13 +18,13 @@
                         <input class="form-control input-lg" placeholder="Email" autocomplete="off" size="20" id="user_email" name="email" type="text" ng-model="email">
                     </div>
                       <div class="form-group">
-                          <input class="form-control input-lg" placeholder="Nom d’utilisateur" autocomplete="off" size="20" id="user_login" name="login" type="text" ng-model="login">
+                          <input class="form-control input-lg" placeholder="Nom" autocomplete="off" size="20" id="user_login" name="login" type="text" ng-model="login">
                       </div>
                       <div class="form-group">
-                          <input class="form-control input-lg" placeholder="Mot de passe" autocomplete="off" size="20" id="user_pass" name="password" type="password" ng-model="password">
+                          <input class="form-control input-lg" placeholder="Prénom" autocomplete="off" size="20" id="user_prenom" name="prenom" type="text" ng-model="prenom">
                       </div>
                       <div class="form-group">
-                          <input class="form-control input-lg" placeholder="Confirmer mot de passe" autocomplete="off" size="20" id="user_confirm-pass" name="confirm-password" type="password" ng-model="password_confirm">
+                          <input class="form-control input-lg" placeholder="Mot de passe" autocomplete="off" size="20" id="user_password" name="password" type="password" ng-model="password">
                       </div>
                       <div class="form-group text-center">
                           <input class="btn btn-success btn-lg btn-block" type="submit" value="S'inscrire"  data-ng-click="createUser()">
@@ -43,3 +44,8 @@
     </div>
   </div>
 </div>
+<script>
+$(document).ready(function(){
+  $('.navbar-bright').css('background:transparent;')
+});
+</script>

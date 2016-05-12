@@ -1,19 +1,38 @@
 <div class="container">
   <div class="row">
-  <h2 class="title text-uppercase text-center">Mon compte</h2>
+    <div class="col-xs-12 col-md-10" style="margin-top:20px;">
+      <div class="panel panel-info">
+         <div class="panel-heading text-center">
+           <h2 class="title" style="color:#fff;"> Mon compte</h2>
+           <p>Vos informations personnelle</p>
+           <span class="glyphicon glyphicon-user" style="font-size:90px;margin-top:10px;"></span>
+
+          <div class="text-right">
+            <a style="color:#fff;" href="#"><span class="glyphicon glyphicon-question-sign" style="font-size:30px"></span> aide</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <h2 class="title text-uppercase text-center"></h2>
     <div class="col-xs-12 col-md-2">
       <ul class="list-group">
-        <li class="list-group-item text-center"><a href="#/" style="text-transform: full-width;"><span class="glyphicon glyphicon-home" style="font-size:30px"></span> Home</a></li>
-        <li class="list-group-item text-center"><a href="#/dashboard" style="text-transform: full-width;"><span class="glyphicon glyphicon-th-list" style="font-size:30px"></span> Dashboard </a></li>
+        <li class="list-group-item text-center"><a href="#/"> Home</a></li>
+        <li class="list-group-item text-center"><a href="#/dashboard"> Dashboard </a></li>
       </ul>
     </div>
     <div class="col-xs-12 col-md-10 content">
       <form class="col-md-12" ng-controller="settingsCtrl">
         <div class="form-group">
-            <input class="form-control input-lg" placeholder="Nom d’utilisateur" autocomplete="off" size="20" id="user_login" name="login" type="text" ng-model="login">
+            <input class="form-control input-lg" type="hidden" autocomplete="off" size="20" id="user_id" name="id" type="text" ng-model="user.id">
         </div>
         <div class="form-group">
-            <input class="form-control input-lg" placeholder="Email" autocomplete="off" size="20" id="user_email" name="email" type="text" ng-model="email">
+            <input class="form-control input-lg" placeholder="Nom" autocomplete="off" size="20" id="user_login" name="first_name" type="text" ng-model="user.first_name">
+        </div>
+        <div class="form-group">
+            <input class="form-control input-lg" placeholder="Prénom" autocomplete="off" size="20" id="user_login"  name="last_name"  type="text" ng-model="user.last_name">
+        </div>
+        <div class="form-group">
+            <input class="form-control input-lg" placeholder="Email" autocomplete="off" size="20" id="user_email" name="email" type="text" ng-model="user.email">
         </div>
           <div class="form-group">
               <input class="form-control input-lg" placeholder="Dernier Mot de passe" autocomplete="off" size="20" id="user_lastpass" name="lastpassword" type="password" ng-model="lastpassword">

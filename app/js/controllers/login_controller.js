@@ -1,15 +1,21 @@
 App.controller('loginCtrl', function ($scope, $http, $window, $location, AuthService, $cookies){
 
-  $scope.login = null;
+  $scope.email = null;
   $scope.password = null;
 
+
+
   $scope.getUser = function(user){
-    username = $scope.login;
+    email = $scope.email;
     password = $scope.password;
-    $http.post(basePath + 'api/login_check', {username: username, password: password})
+    var form = new FormData();
+    form.append("email", email);
+    form.append("password", password);
+    $http.post(basePath + 'authenticate', $.param({email: email, password: password}), {headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
       .success(function(data){
-        AuthService.setToken('Bearer ' + data.token);
-        $cookies.Auth = data.token;
+        AuthService.setToken('' + data.auth_token);
+        $cookies.Auth = data.auth_token;
+        //console.log(data.token.auth_token);
         $location.path('/dashboard');
       })
       .error(function(data){
@@ -17,11 +23,13 @@ App.controller('loginCtrl', function ($scope, $http, $window, $location, AuthSer
       })
   };
 
-  
+
 
   $scope.showModal = false;
   $scope.toggleModal = function(){
       $scope.showModal = !$scope.showModal;
   };
+
+  $('.navbar-bright').css('background-color','transparent');
 
 });

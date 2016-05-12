@@ -2,17 +2,18 @@
   <h1 class="title">Immoboard</h1>
   <div class="container">
     <div class="row">
-
-      <form role="search" class="form-inline" method="get" action="/">
-        <div class="col-md-12">
-           <div class="input-group input-group-lg">
-            <input type="text" required="required" class="form-control search-input text-center" size="50" placeholder="Entrer l'url de votre annonce">
-             <span class="input-group-btn">
-               <button class="btn btn-primary btn-lg" type="button"><span class="glyphicon glyphicon-search"></span></button>
-             </span>
-           </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
+      <form role="search" class="form-inline ng-pristine ng-valid" ng-controller="indexCtrl">
+      <div class="">
+         <div class="input-group input-group-lg">
+          <input required="required" class="form-control search-input text-center" size="50" placeholder="Entrer l'url de votre annonce" ng-model="offer_url" type="text">
+           <span class="input-group-btn">
+             <button class="btn btn-primary btn-lg" type="button" data-ng-click="addOffer(offer)"><span class="glyphicon glyphicon-search"></span></button>
+           </span>
+         </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
       </form>
+      <div id="rect"></div>
+
     </div>
   </div>
 </div>
@@ -58,7 +59,6 @@
 							<div class="feature-content">
 								<h1>Télécharger</h1>
 								<p>Built using HTML5/CSS3 and jQuery, and built using one of the world's most powerful CSS frameworks available, Bootstrap.</p>
-								<a href="http://tympanus.net/codrops/?p=22554" class="read-more-btn">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 							</div>
 						</div>
 						<div class="col-md-4 feature-2 wp2 delay-05s animated fadeInDown">
@@ -68,7 +68,7 @@
 							<div class="feature-content">
 								<h1>Organiser</h1>
 								<p>Perfect if you run your own start-up, product or service. Boxify can showcase your business converting your visits to income.</p>
-								<a href="http://tympanus.net/codrops/?p=22554" class="read-more-btn">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
 							</div>
 						</div>
 						<div class="col-md-4 feature-3 wp2 delay-1s animated fadeInDown">
@@ -77,8 +77,7 @@
 							</div>
 							<div class="feature-content">
 								<h1>Valider</h1>
-								<p>As aways, download Boxify for free exclusively from Codrops. If you love Boxify and want to thank me, simply <a href="http://peterfinlan.com/">buy me a beer</a>. </p>
-								<a href="http://tympanus.net/codrops/?p=22554" class="read-more-btn">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+								<p>As aways, download Boxify for free exclusively from Codrops. If you love Boxify and want to thank me, simply . </p>
 							</div>
 						</div>
 
@@ -103,7 +102,7 @@
 <div class="container-fluid content">
   <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <div class="col-md-3 text-center"><b>Copyright © Immoboard - 2016</b></div>
+        <div class="col-md-3 text-center"><b>Copyright © Immoboard - <span id="year"></span> </b></div>
         <div class="col-md-3 text-center"><b>Privacy</b></div>
         <div class="col-md-3 text-center"><b>Policy</b></div>
         <div class="col-md-3 text-center"><b>Contact</b></div>

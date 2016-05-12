@@ -12,6 +12,12 @@ App.config(function($routeProvider) {
       controller:  'loginCtrl'
     })
   $routeProvider
+    .when('/logout', {
+      title: 'Deconnexion',
+      templateUrl: 'views/logout.html',
+      controller:  'logoutCtrl'
+    })
+  $routeProvider
     .when('/signup', {
       title: 'Inscription',
       templateUrl: 'views/signup.html',
@@ -34,5 +40,23 @@ App.config(function($routeProvider) {
       title: 'Mon compte',
       templateUrl: 'views/settings.html',
       controller:  'settingsCtrl'
+    })
+  $routeProvider
+    .when('/dossier/:id', {
+      title: 'Edition dossier ',
+      templateUrl: 'views/edit.html',
+      controller:  'editCtrl'
+    })
+  $routeProvider
+    .when('/dossier', {
+      title: 'Edition dossier ',
+      templateUrl: 'views/add.html',
+      controller:  'editCtrl'
+    })
+    $routeProvider
+    .when('/password_reset/:id', {
+      title: 'Edition mot du passe ',
+      templateUrl: 'views/newpassword.html',
+      controller:  'LostpwdCtrl'
     })
 });

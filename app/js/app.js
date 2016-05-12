@@ -20,10 +20,16 @@ App.factory('AuthService', function($http) {
   }
 });
 
+App.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    }
+]);
+
 
 App.controller('AuthCookieCtrl', function($cookies, AuthService) {
   var Authorization = $cookies.Auth;
-  AuthService.setToken('Bearer ' + Authorization);
+  AuthService.setToken('' + Authorization);
 });
 
 App.run(function ($rootScope) {
@@ -73,8 +79,6 @@ App.directive('modal', function () {
       }
     };
   });
-
-  
 
   function appendResult(userText , className, iconClass){
     var resultHTML = '<div class="alert alert-'+className+' alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+userText+'</div>';

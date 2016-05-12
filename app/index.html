@@ -5,10 +5,27 @@
 <title ng-bind="$root.title +' - Immoboard'">Immoboard</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/app.css">
+<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="img/favicon//ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 <!-- JavaScript -->
   <script type="text/javascript">
-  var basePath = 'http://127.0.0.1/Front-ImmoBoard/';
+  var basePath = 'http://immoboard-staging.herokuapp.com/';
   </script>
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/angular/angular.min.js"></script>
@@ -20,10 +37,12 @@
 <script src="js/routes.js"></script>
 <script src="js/controllers/index_controller.js"></script>
 <script src="js/controllers/login_controller.js"></script>
+<script src="js/controllers/logout_controller.js"></script>
 <script src="js/controllers/signup_controller.js"></script>
 <script src="js/controllers/lostpassword_controller.js"></script>
 <script src="js/controllers/dashboard_controller.js"></script>
 <script src="js/controllers/settings_controller.js"></script>
+<script src="js/controllers/edit_controller.js"></script>
 </head>
 <body>
   <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -39,14 +58,17 @@
             </div>
             <nav class="collapse navbar-collapse" role="navigation">
                 <ul class="nav navbar-right navbar-nav">
-                  <li>
-                      <a id="menu-login" href="#/login"><span class="glyphicon glyphicon-user"></span> Connexion</a>
+                  <li id="menu-login" >
+                      <a id="menu-login" class="btn" href="#/login"><span class="glyphicon glyphicon-user"></span> Connexion</a>
                   </li>
+                  <li class="menu-logout" style="display:none" role="moncompte">
+                    <a href="#/dashboard"><span class="glyphicon glyphicon-user"></span> Mon Compte</a>
+                  </li>
+                  <li class="menu-logout" style="display:none"><a  href="#/logout"><span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
     <div ng-controller="AuthCookieCtrl"></div>
   <div class="" ng-view style='border-radius: 4px'>
   </div>

@@ -1,0 +1,169 @@
+<div class="container">
+  <div class="row" style="margin-top:20px;">
+    <div class="col-xs-12 col-md-12" style="margin-top:20px;">
+      <div class="panel panel-success">
+         <div class="panel-heading text-center">
+           <h2 class="title" style="color:#fff;"> Ajouter un dossier</h2>
+           <p>Les informations sur le bien recherché</p>
+           <span class="glyphicon glyphicon-star" style="font-size:90px;margin-top:10px;"></span>
+
+          <div class="text-right">
+            <a style="color:#fff;" href="#"><span class="glyphicon glyphicon-question-sign" style="font-size:30px"></span> aide</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-12 content">
+      <form class="form-horizontal" role="form" ng-controller="editCtrl">
+        <div class="form-group">
+        <input class="form-control" type="hidden" id="id" name="id" ng-model="offer.id" type="text">
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-2 col-md-offset-2" for="id_email">Nom</label>
+          <div class="col-md-6">
+            <div class="form-group">
+                <input class="form-control" id="name" name="name" placeholder="Nom" ng-model="offer.name" type="text">
+            </div>
+          </div>
+        </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="titre">Agence</label>
+            <div class="col-md-3 indent-small">
+              <div class="form-group internal">
+                <input class="form-control" id="agency" placeholder="" name="agency" ng-model="offer.agency" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="titre">Url site</label>
+            <div class="col-md-3 indent-small">
+              <div class="form-group internal">
+                <input class="form-control" id="url" placeholder="" name="url" ng-model="offer.url" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="titre">Type</label>
+            <div class="col-md-3 indent-small">
+              <div class="form-group internal">
+                <input class="form-control" id="type" placeholder="" name="type" ng-model="offer.offer_type" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="city">Prix</label>
+            <div class="col-md-3">
+              <div class="form-group">
+                  <input class="form-control" id="cost" placeholder="€" name="cost" ng-model="offer.cost" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="city">Ville</label>
+            <div class="col-md-3">
+              <div class="form-group">
+                  <input class="form-control" id="city" placeholder="€" name="city" ng-model="offer.city" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="surface">Surface m²</label>
+            <div class="col-md-3">
+              <div class="form-group">
+                  <input class="form-control" id="surface" id="surface" placeholder="m²" ng-model="offer.surface" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="id_title">Nombre de pièces</label>
+            <div class="col-md-8">
+                <div class="form-group internal">
+                  <label ng-repeat="n in [1,2,3,4,5]" class="radio-inline">
+                    <input ng-checked="(offer.rooms == n)" type="radio" name="rooms" id="rooms{{n}}" value="{{n}}"> {{n}}
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="rooms" ng-checked="(offer[0].rooms >= 6)" id="rooms6" value="6"> 6 et +
+                  </label>
+              </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="id_title">Nombre de chambres</label>
+            <div class="col-md-8">
+                <div class="form-group internal">
+                  <label ng-repeat="n in [1,2,3,4,5]" class="radio-inline">
+                    <input ng-checked="(offer.chambers == n)" type="radio" name="chambers" id="chambers{{n}}" value="{{n}}"> {{n}}
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="chambers" ng-checked="(offer.chambers >= 6)" id="chambers6" value="6"> 6 et +
+                  </label>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="zipcode">Code Postal</label>
+            <div class="col-md-3">
+              <div class="form-group">
+                  <input class="form-control" id="zip" name="zip" placeholder="Code Postal" ng-model="offer.zip" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="titre">telephone</label>
+            <div class="col-md-3 indent-small">
+              <div class="form-group internal">
+                <input class="form-control" id="phone" placeholder="" name="phone" ng-model="offer.phone" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="id_comments">Description</label>
+            <div class="col-md-6">
+              <textarea class="form-control" id="description" name="description" placeholder="" ng-model="offer.description" value="" rows="3">{{ offer.description }}</textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="id_comments">Année construction</label>
+            <div class="col-md-3 indent-small">
+              <div class="form-group internal">
+                <input class="form-control" id="year" placeholder="" name="year" ng-model="offer.year" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="id_comments">Commentaires</label>
+            <div class="col-md-6">
+              <textarea class="form-control" id="notes" name="notes" placeholder="Ajouter un commentaires" ng-model="offer.notes" rows="3">{{ offer.note }}</textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" style="display:none" for="id_email">Flag</label>
+            <div class="col-md-6">
+              <div class="form-group">
+                  <input class="form-control" type="hidden" id="flags" name="flags" placeholder="Flag" ng-model="offer.flags" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-md-2 col-md-offset-2" for="statut">Statut</label>
+            <div class="col-md-8">
+              <label class="radio-inline">
+                <input type="radio"  name="active" id="active" value="true"> Active
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="active" id="active2" value="false"> Désactiver
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-offset-4 col-md-3">
+              <button class="btn btn-success" type="submit" data-ng-click="addOffer(offer)">Créer</button>
+            </div>
+            <div class="col-md-3">
+              <a href="#/dashboard" class="btn btn-danger" style="float:right">Retour</a>
+            </div>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
